@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.nnk.springboot.CurvePointTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.009 s <<< FAILURE! - in com.nnk.springboot.CurvePointTests
+curvePointTest  Time elapsed: 0.009 s  <<< ERROR!
+org.springframework.beans.InvalidPropertyException: Invalid property 'id' of bean class [com.nnk.springboot.domain.CurvePoint]: Getter for property 'id' threw exception; nested exception is java.lang.reflect.InvocationTargetException
+	at com.nnk.springboot.CurvePointTests.curvePointTest(CurvePointTests.java:30)
+Caused by: java.lang.reflect.InvocationTargetException
+	at com.nnk.springboot.CurvePointTests.curvePointTest(CurvePointTests.java:30)
+Caused by: java.lang.NullPointerException
+	at com.nnk.springboot.CurvePointTests.curvePointTest(CurvePointTests.java:30)
+

@@ -5,41 +5,45 @@ import org.springframework.beans.factory.annotation.Required;
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Bidlist")
+@Table(name = "bid_list")
 public class BidList {
-    // TODO: Map columns in data table BIDLIST with corresponding java fields
+    // TODO: Map columns in data table BIDLIST with corresponding java fields : ok
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "BidListId")
-    private Integer BidListId;
+    @Column(name = "bidlistid")
+    private Integer bidListId;
 
     @Column(name = "account")
+    @NotNull
     private String account;
 
     @Column(name = "type")
+    @NotNull
     private String type;
 
-    @Column(name = "bidQuantity")
-    private double bidQuantity;
+    @Column(name = "bid_quantity")
+    @NotNull
+    private Double bidQuantity;
 
-    @Column(name = "askQuantity")
-    private double askQuantity;
+    @Column(name = "ask_quantity")
+    private Double askQuantity;
 
     @Column(name = "bid")
-    private double bid;
+    private Double bid;
 
     @Column(name = "ask")
-    private double ask;
+    private Double ask;
 
     @Column(name = "benchmark")
     private String benchmark;
 
-    @Column(name = "bidListDate")
+    @Column(name = "bid_list_date")
     private Timestamp bidListDate;
 
     @Column(name = "commentary")
@@ -57,38 +61,37 @@ public class BidList {
     @Column(name = "book")
     private String book;
 
-    @Column(name = "creationName")
+    @Column(name = "creation_name")
     private String creationName;
 
-    @Column(name = "creationDate")
+    @Column(name = "creation_date")
     private Timestamp creationDate;
 
-    @Column(name = "revisionName")
+    @Column(name = "revision_name")
     private String revisionName;
 
-    @Column(name = "revisionDate")
+    @Column(name = "revision_date")
     private Timestamp revisionDate;
 
-    @Column(name = "dealName")
+    @Column(name = "deal_name")
     private String dealName;
 
-    @Column(name = "dealType")
+    @Column(name = "deal_type")
     private String dealType;
 
-    @Column(name = "sourceListId")
+    @Column(name = "source_list_id")
     private String sourceListId;
 
     @Column(name = "side")
     private String side;
 
 
-
-    public int getBidListId() {
-        return BidListId;
+    public Integer getBidListId() {
+        return bidListId;
     }
 
-    public void setBidListId(int bidListId) {
-        BidListId = bidListId;
+    public void setBidListId(Integer bidListId) {
+        this.bidListId = bidListId;
     }
 
     public String getAccount() {
@@ -107,35 +110,35 @@ public class BidList {
         this.type = type;
     }
 
-    public double getBidQuantity() {
+    public Double getBidQuantity() {
         return bidQuantity;
     }
 
-    public void setBidQuantity(double bidQuantity) {
+    public void setBidQuantity(Double bidQuantity) {
         this.bidQuantity = bidQuantity;
     }
 
-    public double getAskQuantity() {
+    public Double getAskQuantity() {
         return askQuantity;
     }
 
-    public void setAskQuantity(double askQuantity) {
+    public void setAskQuantity(Double askQuantity) {
         this.askQuantity = askQuantity;
     }
 
-    public double getBid() {
+    public Double getBid() {
         return bid;
     }
 
-    public void setBid(double bid) {
+    public void setBid(Double bid) {
         this.bid = bid;
     }
 
-    public double getAsk() {
+    public Double getAsk() {
         return ask;
     }
 
-    public void setAsk(double ask) {
+    public void setAsk(Double ask) {
         this.ask = ask;
     }
 

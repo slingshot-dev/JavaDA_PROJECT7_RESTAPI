@@ -34,19 +34,19 @@ public class CurvePoint {
     private Timestamp creationDate;
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getCurveId() {
+    public Integer getCurveId() {
         return curveId;
     }
 
-    public void setCurveId(int curveId) {
+    public void setCurveId(Integer curveId) {
         this.curveId = curveId;
     }
 
