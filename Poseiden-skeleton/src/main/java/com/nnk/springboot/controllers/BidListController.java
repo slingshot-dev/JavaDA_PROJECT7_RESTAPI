@@ -42,7 +42,7 @@ public class BidListController {
         // Verifie que les datas dont valides et sinon return sur la page d'ajout de données
         if (!result.hasErrors()) {
 
-            // Ajout des elements en BDD et return Bid List
+            // Ajout des elements en BDD et redirection vers Bid List
             bidListRepository.save(bid);
             model.addAttribute("bidlists", bidListRepository.findAll());
             return "redirect:/bidList/list";
@@ -53,13 +53,10 @@ public class BidListController {
     @GetMapping("/bidList/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) throws Exception {
         // TODO: get Bid by Id and to model then show to the form : ok
-        if(bidListRepository.findByBidListId(id) != null) {
+
             BidList bidList = bidListRepository.findByBidListId(id);
             model.addAttribute("bidList", bidList);
             return "bidList/update";
-        } else {
-            throw new Exception("BidlistId not found in database");
-        }
     }
 
     @PostMapping("/bidList/update/{id}")
@@ -72,15 +69,12 @@ public class BidListController {
         bidList.setBidListId(id);
         bidListRepository.save(bidList);
         model.addAttribute("bidLists", bidListRepository.findAll());
-        model.addAttribute("users", bidListRepository.findAll());
         return "redirect:/bidList/list";
     }
 
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         // TODO: Find Bid by Id and delete the bid, return to Bid list : ok
-
-        // Ajouter confirmation de delete
 
         BidList bidlist = bidListRepository.findByBidListId(id);
         bidListRepository.delete(bidlist);

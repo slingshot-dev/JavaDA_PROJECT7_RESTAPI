@@ -9,28 +9,32 @@ import java.sql.Timestamp;
 
 
 @Entity
-@Table(name = "CurvePoint")
+@Table(name = "curve_point")
 public class CurvePoint {
     // TODO: Map columns in data table CURVEPOINT with corresponding java fields
 
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "curveId")
+    @NotNull
+    @Column(name = "curve_id")
     private Integer curveId;
 
-    @Column(name = "asOfDate")
+    @Column(name = "as_of_date")
     private Timestamp asOfDate;
 
+    @NotNull
     @Column(name = "term")
     private double term;
 
+    @NotNull
     @Column(name = "value")
     private double value;
 
-    @Column(name = "creationDate")
+    @Column(name = "creation_date")
     private Timestamp creationDate;
 
 
