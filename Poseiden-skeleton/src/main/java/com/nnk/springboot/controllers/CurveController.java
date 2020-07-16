@@ -25,7 +25,7 @@ public class CurveController {
     public String home(Model model)
     {
         // TODO: find all Curve Point, add to model : ok
-        model.addAttribute("curvep", curvePointRepository.findAll());
+        model.addAttribute("curves", curvePointRepository.findAll());
         return "curvePoint/list";
     }
 
@@ -43,7 +43,7 @@ public class CurveController {
 
             // Ajout des elements en BDD et redirection vers Bid List
             curvePointRepository.save(curvePoint);
-            model.addAttribute("curvep", curvePointRepository.findAll());
+            model.addAttribute("curves", curvePointRepository.findAll());
             return "redirect:/curvePoint/list";
         }
 
@@ -55,7 +55,7 @@ public class CurveController {
         // TODO: get CurvePoint by Id and to model then show to the form
 
         CurvePoint curvePoint = curvePointRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid curve point Id:" + id));
-        model.addAttribute("curvep", curvePoint);
+        model.addAttribute("curve", curvePoint);
 
         return "curvePoint/update";
     }
@@ -70,7 +70,7 @@ public class CurveController {
         }
         curvePoint.setId(id);
         curvePointRepository.save(curvePoint);
-        model.addAttribute("curvep", curvePointRepository.findAll());
+        model.addAttribute("curves", curvePointRepository.findAll());
         return "redirect:/curvePoint/list";
     }
 

@@ -39,7 +39,7 @@
 			<tbody>
 			<!-- TODO: Show all CurvePoint to the table, the action column will have Edit & Delete buttons -->
 
-			<tr th:each="curve_point : ${curvep}">
+			<tr th:each="curve_point : ${curves}">
 				<td style="width: 10%" th:text="${curve_point.id}"></td>
 				<td th:text="${curve_point.curveId}"></td>
 				<td th:text="${curve_point.term}"></td>

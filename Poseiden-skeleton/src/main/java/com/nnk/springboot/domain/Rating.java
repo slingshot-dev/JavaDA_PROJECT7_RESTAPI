@@ -6,25 +6,25 @@ import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Rating")
+@Table(name = "rating")
 public class Rating {
-    // TODO: Map columns in data table RATING with corresponding java fields
+    // TODO: Map columns in data table RATING with corresponding java fields : ok
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public Integer id;
 
-    @Column(name = "moodysRating")
+    @Column(name = "moodys_rating")
     public String moodysRating;
 
     @Column(name = "sandPRating")
     public String sandPRating;
 
-    @Column(name = "fitchRating")
+    @Column(name = "fitch_rating")
     public String fitchRating;
 
-    @Column(name = "orderNumber")
+    @Column(name = "order_number")
     public Integer orderNumber;
 
 
