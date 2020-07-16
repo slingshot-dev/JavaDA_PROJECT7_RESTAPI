@@ -2,10 +2,11 @@ package com.nnk.springboot.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Rule")
+@Table(name = "rule")
 public class RuleName {
     // TODO: Map columns in data table RULENAME with corresponding java fields
 
@@ -14,22 +15,28 @@ public class RuleName {
     @Column(name = "id")
     private Integer id;
 
+    @NotNull
     @Column(name = "name")
     private String name;
 
+    @NotNull
     @Column(name = "description")
     private String description;
 
+    @NotNull
     @Column(name = "json")
     private String json;
 
+    @NotNull
     @Column(name = "template")
     private String template;
 
-    @Column(name = "sqlStr")
+    @NotNull
+    @Column(name = "sql_str")
     private String sqlStr;
 
-    @Column(name = "sqlPart")
+    @NotNull
+    @Column(name = "sql_part")
     private String sqlPart;
 
 
