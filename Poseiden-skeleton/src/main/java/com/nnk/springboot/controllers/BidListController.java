@@ -1,10 +1,7 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.BidList;
-import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.BidListRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,8 +16,12 @@ import javax.validation.Valid;
 @Controller
 public class BidListController {
     // TODO: Inject Bid service : ok
-    @Autowired
-    private BidListRepository bidListRepository;
+    private final BidListRepository bidListRepository;
+
+    public BidListController(BidListRepository bidListRepository) {
+        this.bidListRepository = bidListRepository;
+    }
+
 
     @RequestMapping("/bidList/list")
     public String home(Model model)
@@ -63,6 +64,7 @@ public class BidListController {
     public String updateBid(@PathVariable("id") Integer id, @Valid BidList bidList,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Bid and return list Bid : ok
+
         if (result.hasErrors()) {
             return "bidlist/update";
         }
@@ -78,7 +80,6 @@ public class BidListController {
 
         BidList bidlist = bidListRepository.findByBidListId(id);
         bidListRepository.delete(bidlist);
-
         return "redirect:/bidList/list";
     }
 }

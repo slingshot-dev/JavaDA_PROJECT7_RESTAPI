@@ -36,6 +36,14 @@ public class CurvePoint {
     @Column(name = "creation_date")
     private Timestamp creationDate;
 
+    public CurvePoint() {
+    }
+
+    public CurvePoint(@NotNull Integer curveId, @NotNull double term, @NotNull double value) {
+        this.curveId = curveId;
+        this.term = term;
+        this.value = value;
+    }
 
     public Integer getId() {
         return id;
@@ -53,13 +61,13 @@ public class CurvePoint {
         this.curveId = curveId;
     }
 
-    public Timestamp getAsOfDate() {
+/*    public Timestamp getAsOfDate() {
         return asOfDate;
     }
 
     public void setAsOfDate(Timestamp asOfDate) {
         this.asOfDate = asOfDate;
-    }
+    }*/
 
     public double getTerm() {
         return term;
@@ -77,11 +85,11 @@ public class CurvePoint {
         this.value = value;
     }
 
-    public Timestamp getCreationDate() {
+/*    public Timestamp getCreationDate() {
         return creationDate;
     }
 
     public void setCreationDate(Timestamp creationDate) {
         this.creationDate = creationDate;
-    }
+    }*/
 }

@@ -15,30 +15,41 @@ public class RuleName {
     @Column(name = "id")
     private Integer id;
 
-    @NotNull
+    @NotBlank
     @Column(name = "name")
     private String name;
 
-    @NotNull
+    @NotBlank
     @Column(name = "description")
     private String description;
 
-    @NotNull
+    @NotBlank
     @Column(name = "json")
     private String json;
 
-    @NotNull
+    @NotBlank
     @Column(name = "template")
     private String template;
 
-    @NotNull
+    @NotBlank
     @Column(name = "sql_str")
     private String sqlStr;
 
-    @NotNull
+    @NotBlank
     @Column(name = "sql_part")
     private String sqlPart;
 
+    public RuleName() {
+    }
+
+    public RuleName(@NotBlank String name, @NotBlank String description, @NotBlank String json, @NotBlank String template, @NotBlank String sqlStr, @NotBlank String sqlPart) {
+        this.name = name;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sqlStr;
+        this.sqlPart = sqlPart;
+    }
 
     public Integer getId() {
         return id;

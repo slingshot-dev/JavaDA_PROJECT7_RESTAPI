@@ -1,9 +1,7 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.Rating;
 import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,8 +15,12 @@ import javax.validation.Valid;
 @Controller
 public class RuleNameController {
     // TODO: Inject RuleName service : ok
-    @Autowired
-    RuleNameRepository ruleNameRepository;
+    private final RuleNameRepository ruleNameRepository;
+
+    public RuleNameController(RuleNameRepository ruleNameRepository) {
+        this.ruleNameRepository = ruleNameRepository;
+    }
+
 
     @RequestMapping("/ruleName/list")
     public String home(Model model)

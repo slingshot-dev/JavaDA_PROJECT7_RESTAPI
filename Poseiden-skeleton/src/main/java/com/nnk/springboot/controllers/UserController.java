@@ -1,7 +1,10 @@
 package com.nnk.springboot.controllers;
 
+import com.nnk.springboot.config.SecurityConfig;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,9 @@ import javax.validation.Valid;
 
 @Controller
 public class UserController {
+
+    private static final Logger logger = LogManager.getLogger(UserController.class);
+
     @Autowired
     private UserRepository userRepository;
 
@@ -33,7 +39,7 @@ public class UserController {
 
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
-        if (!result.hasErrors()) {
+        if (!result.hasErrors() & SecurityConfig.testPassword(user.getPassword())) {
             BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
             user.setPassword(encoder.encode(user.getPassword()));
             userRepository.save(user);

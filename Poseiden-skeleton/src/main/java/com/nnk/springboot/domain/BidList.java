@@ -20,11 +20,11 @@ public class BidList {
     private Integer bidListId;
 
     @Column(name = "account")
-    @NotNull
+    @NotBlank
     private String account;
 
     @Column(name = "type")
-    @NotNull
+    @NotBlank
     private String type;
 
     @Column(name = "bid_quantity")
@@ -85,6 +85,14 @@ public class BidList {
     @Column(name = "side")
     private String side;
 
+    public BidList() {
+    }
+
+    public BidList(@NotBlank String account, @NotBlank String type, @NotNull Double bidQuantity) {
+        this.account = account;
+        this.type = type;
+        this.bidQuantity = bidQuantity;
+    }
 
     public Integer getBidListId() {
         return bidListId;
@@ -118,13 +126,13 @@ public class BidList {
         this.bidQuantity = bidQuantity;
     }
 
-    public Double getAskQuantity() {
+/*    public Double getAskQuantity() {
         return askQuantity;
     }
 
     public void setAskQuantity(Double askQuantity) {
         this.askQuantity = askQuantity;
-    }
+    }*/
 
     public Double getBid() {
         return bid;
@@ -134,7 +142,7 @@ public class BidList {
         this.bid = bid;
     }
 
-    public Double getAsk() {
+    /*public Double getAsk() {
         return ask;
     }
 
@@ -260,5 +268,5 @@ public class BidList {
 
     public void setSide(String side) {
         this.side = side;
-    }
+    }*/
 }

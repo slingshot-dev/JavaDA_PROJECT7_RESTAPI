@@ -1,9 +1,7 @@
 package com.nnk.springboot.controllers;
 
-import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,13 +11,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
 public class CurveController {
     // TODO: Inject Curve Point service : ok
-    @Autowired
-    CurvePointRepository curvePointRepository;
+    private final CurvePointRepository curvePointRepository;
+
+    public CurveController(CurvePointRepository curvePointRepository) {
+        this.curvePointRepository = curvePointRepository;
+    }
+
 
     @RequestMapping("/curvePoint/list")
     public String home(Model model)
@@ -46,7 +47,6 @@ public class CurveController {
             model.addAttribute("curves", curvePointRepository.findAll());
             return "redirect:/curvePoint/list";
         }
-
         return "curvePoint/add";
     }
 
@@ -56,7 +56,6 @@ public class CurveController {
 
         CurvePoint curvePoint = curvePointRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid curve point Id:" + id));
         model.addAttribute("curve", curvePoint);
-
         return "curvePoint/update";
     }
 
@@ -80,7 +79,6 @@ public class CurveController {
 
         CurvePoint curvePoint = curvePointRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid curve point Id:" + id));
         curvePointRepository.delete(curvePoint);
-
         return "redirect:/curvePoint/list";
     }
 }

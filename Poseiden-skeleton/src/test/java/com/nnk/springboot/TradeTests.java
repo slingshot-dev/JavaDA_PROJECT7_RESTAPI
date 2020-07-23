@@ -21,9 +21,8 @@ public class TradeTests {
 
 	@Test
 	public void tradeTest() {
-		Trade trade = new Trade();
-		trade.setAccount("Trade Account");
-		trade.setType("Type");
+
+		Trade trade = new Trade("Trade Account", "Type");
 
 		// Save
 		trade = tradeRepository.save(trade);

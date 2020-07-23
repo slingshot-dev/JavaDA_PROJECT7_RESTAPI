@@ -15,18 +15,31 @@ public class Rating {
     @Column(name = "id")
     public Integer id;
 
+    @NotBlank
     @Column(name = "moodys_rating")
     public String moodysRating;
 
+    @NotBlank
     @Column(name = "sandPRating")
     public String sandPRating;
 
+    @NotBlank
     @Column(name = "fitch_rating")
     public String fitchRating;
 
+    @NotNull
     @Column(name = "order_number")
     public Integer orderNumber;
 
+    public Rating() {
+    }
+
+    public Rating(@NotBlank String moodysRating, @NotBlank String sandPRating, @NotBlank String fitchRating, @NotNull Integer orderNumber) {
+        this.moodysRating = moodysRating;
+        this.sandPRating = sandPRating;
+        this.fitchRating = fitchRating;
+        this.orderNumber = orderNumber;
+    }
 
     public Integer getId() {
         return id;
