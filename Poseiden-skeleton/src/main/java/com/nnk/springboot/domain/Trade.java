@@ -1,8 +1,7 @@
 package com.nnk.springboot.domain;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.sql.Timestamp;
 
 
@@ -116,11 +115,11 @@ public class Trade {
         return buyQuantity;
     }
 
-/*    public void setBuyQuantity(double buyQuantity) {
+   public void setBuyQuantity(double buyQuantity) {
         this.buyQuantity = buyQuantity;
     }
 
-    public double getSellQuantity() {
+/*     public double getSellQuantity() {
         return sellQuantity;
     }
 

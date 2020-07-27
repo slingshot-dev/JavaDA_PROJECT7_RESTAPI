@@ -41,23 +41,23 @@ public class BidListController {
         // TODO: check data valid and save to db, after saving return bid list : ok
 
         // Verifie que les datas dont valides et sinon return sur la page d'ajout de données
-<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!result.hasErrors()) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
 
             // Ajout des elements en BDD et redirection vers Bid List
-<span class="nc" id="L47">            bidListRepository.save(bid);</span>
-<span class="nc" id="L48">            model.addAttribute(&quot;bidlists&quot;, bidListRepository.findAll());</span>
-<span class="nc" id="L49">            return &quot;redirect:/bidList/list&quot;;</span>
+<span class="fc" id="L47">            bidListRepository.save(bid);</span>
+<span class="fc" id="L48">            model.addAttribute(&quot;bidlists&quot;, bidListRepository.findAll());</span>
+<span class="fc" id="L49">            return &quot;redirect:/bidList/list&quot;;</span>
         }
-<span class="nc" id="L51">        return &quot;bidList/add&quot;;</span>
+<span class="fc" id="L51">        return &quot;bidList/add&quot;;</span>
     }
 
     @GetMapping(&quot;/bidList/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) throws Exception {
         // TODO: get Bid by Id and to model then show to the form : ok
 
-<span class="nc" id="L58">            BidList bidList = bidListRepository.findByBidListId(id);</span>
-<span class="nc" id="L59">            model.addAttribute(&quot;bidList&quot;, bidList);</span>
-<span class="nc" id="L60">            return &quot;bidList/update&quot;;</span>
+<span class="fc" id="L58">            BidList bidList = bidListRepository.findByBidListId(id);</span>
+<span class="fc" id="L59">            model.addAttribute(&quot;bidList&quot;, bidList);</span>
+<span class="fc" id="L60">            return &quot;bidList/update&quot;;</span>
     }
 
     @PostMapping(&quot;/bidList/update/{id}&quot;)
@@ -65,22 +65,22 @@ public class BidListController {
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Bid and return list Bid : ok
 
-<span class="nc bnc" id="L68" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
-<span class="nc" id="L69">            return &quot;bidlist/update&quot;;</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        if (result.hasErrors()) {</span>
+<span class="fc" id="L69">            return &quot;bidList/update&quot;;</span>
         }
-<span class="nc" id="L71">        bidList.setBidListId(id);</span>
-<span class="nc" id="L72">        bidListRepository.save(bidList);</span>
-<span class="nc" id="L73">        model.addAttribute(&quot;bidLists&quot;, bidListRepository.findAll());</span>
-<span class="nc" id="L74">        return &quot;redirect:/bidList/list&quot;;</span>
+<span class="fc" id="L71">        bidList.setBidListId(id);</span>
+<span class="fc" id="L72">        bidListRepository.save(bidList);</span>
+<span class="fc" id="L73">        model.addAttribute(&quot;bidLists&quot;, bidListRepository.findAll());</span>
+<span class="fc" id="L74">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 
     @GetMapping(&quot;/bidList/delete/{id}&quot;)
     public String deleteBid(@PathVariable(&quot;id&quot;) Integer id, Model model) {
         // TODO: Find Bid by Id and delete the bid, return to Bid list : ok
 
-<span class="nc" id="L81">        BidList bidlist = bidListRepository.findByBidListId(id);</span>
-<span class="nc" id="L82">        bidListRepository.delete(bidlist);</span>
-<span class="nc" id="L83">        return &quot;redirect:/bidList/list&quot;;</span>
+<span class="fc" id="L81">        BidList bidlist = bidListRepository.findByBidListId(id);</span>
+<span class="fc" id="L82">        bidListRepository.delete(bidlist);</span>
+<span class="fc" id="L83">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

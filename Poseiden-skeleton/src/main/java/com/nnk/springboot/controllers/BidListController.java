@@ -66,7 +66,7 @@ public class BidListController {
         // TODO: check required fields, if valid call service to update Bid and return list Bid : ok
 
         if (result.hasErrors()) {
-            return "bidlist/update";
+            return "bidList/update";
         }
         bidList.setBidListId(id);
         bidListRepository.save(bidList);
