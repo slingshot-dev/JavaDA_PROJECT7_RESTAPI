@@ -41,13 +41,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 <span class="fc" id="L41">    }</span>
 
     public static boolean testPassword(String pass) {
-<span class="nc" id="L44">        String strRegEx = &quot;^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*])(?=\\S+$).{8,15}$&quot;;</span>
+<span class="fc" id="L44">        String strRegEx = &quot;^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*])(?=\\S+$).{8,15}$&quot;;</span>
 
-<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (pass.matches(strRegEx))</span>
-<span class="nc" id="L47">            return true;</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (pass.matches(strRegEx))</span>
+<span class="fc" id="L47">            return true;</span>
         else
-<span class="nc" id="L49">            logger.info(pass +&quot; is not a valid password&quot;);</span>
-<span class="nc" id="L50">            return false;</span>
+<span class="fc" id="L49">            logger.info(pass +&quot; is not a valid password&quot;);</span>
+<span class="fc" id="L50">            return false;</span>
     }
 
 }

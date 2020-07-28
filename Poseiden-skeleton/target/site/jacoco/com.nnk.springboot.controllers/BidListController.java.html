@@ -70,7 +70,7 @@ public class BidListController {
         }
 <span class="fc" id="L71">        bidList.setBidListId(id);</span>
 <span class="fc" id="L72">        bidListRepository.save(bidList);</span>
-<span class="fc" id="L73">        model.addAttribute(&quot;bidLists&quot;, bidListRepository.findAll());</span>
+<span class="fc" id="L73">        model.addAttribute(&quot;bidList&quot;, bidListRepository.findAll());</span>
 <span class="fc" id="L74">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 

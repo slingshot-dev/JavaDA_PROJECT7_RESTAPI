@@ -82,9 +82,10 @@ public class Trade {
     public Trade() {
     }
 
-    public Trade(@NotBlank String account, @NotBlank String type) {
+    public Trade(@NotBlank String account, @NotBlank String type, @NotNull Double buyQuantity) {
         this.account = account;
         this.type = type;
+        this.buyQuantity = buyQuantity;
     }
 
     public Integer getTradeId() {

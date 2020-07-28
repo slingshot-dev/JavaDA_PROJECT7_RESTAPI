@@ -27,13 +27,13 @@ public class TradeController {
     {
         // TODO: find all Trade, add to model
 
-<span class="nc" id="L30">        model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
-<span class="nc" id="L31">        return &quot;trade/list&quot;;</span>
+<span class="fc" id="L30">        model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
+<span class="fc" id="L31">        return &quot;trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/trade/add&quot;)
     public String addUser(Trade bid) {
-<span class="nc" id="L36">        return &quot;trade/add&quot;;</span>
+<span class="fc" id="L36">        return &quot;trade/add&quot;;</span>
     }
 
     @PostMapping(&quot;/trade/validate&quot;)
@@ -41,26 +41,26 @@ public class TradeController {
         // TODO: check data valid and save to db, after saving return Trade list
 
         // Verifie que les datas dont valides et sinon return sur la page d'ajout de données
-<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (!result.hasErrors()) {</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
 
             // Ajout des elements en BDD et redirection vers Bid List
-<span class="nc" id="L47">            tradeRepository.save(trade);</span>
-<span class="nc" id="L48">            model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
-<span class="nc" id="L49">            return &quot;redirect:/trade/list&quot;;</span>
+<span class="fc" id="L47">            tradeRepository.save(trade);</span>
+<span class="fc" id="L48">            model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
+<span class="fc" id="L49">            return &quot;redirect:/trade/list&quot;;</span>
         }
 
 
-<span class="nc" id="L53">        return &quot;trade/add&quot;;</span>
+<span class="fc" id="L53">        return &quot;trade/add&quot;;</span>
     }
 
     @GetMapping(&quot;/trade/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
         // TODO: get Trade by Id and to model then show to the form
 
-<span class="nc" id="L60">        Trade trade = tradeRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
-<span class="nc" id="L61">        model.addAttribute(&quot;trade&quot;, trade);</span>
+<span class="pc" id="L60">        Trade trade = tradeRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
+<span class="fc" id="L61">        model.addAttribute(&quot;trade&quot;, trade);</span>
 
-<span class="nc" id="L63">        return &quot;trade/update&quot;;</span>
+<span class="fc" id="L63">        return &quot;trade/update&quot;;</span>
     }
 
     @PostMapping(&quot;/trade/update/{id}&quot;)
@@ -68,24 +68,24 @@ public class TradeController {
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Trade and return Trade list
 
-<span class="nc bnc" id="L71" title="All 2 branches missed.">        if (result.hasErrors()) {</span>
-<span class="nc" id="L72">            return &quot;trade/update&quot;;</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (result.hasErrors()) {</span>
+<span class="fc" id="L72">            return &quot;trade/update&quot;;</span>
         }
-<span class="nc" id="L74">        trade.setTradeId(id);</span>
-<span class="nc" id="L75">        tradeRepository.save(trade);</span>
-<span class="nc" id="L76">        model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
+<span class="fc" id="L74">        trade.setTradeId(id);</span>
+<span class="fc" id="L75">        tradeRepository.save(trade);</span>
+<span class="fc" id="L76">        model.addAttribute(&quot;trades&quot;, tradeRepository.findAll());</span>
 
-<span class="nc" id="L78">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="fc" id="L78">        return &quot;redirect:/trade/list&quot;;</span>
     }
 
     @GetMapping(&quot;/trade/delete/{id}&quot;)
     public String deleteTrade(@PathVariable(&quot;id&quot;) Integer id, Model model) {
         // TODO: Find Trade by Id and delete the Trade, return to Trade list
 
-<span class="nc" id="L85">        Trade trade = tradeRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
-<span class="nc" id="L86">        tradeRepository.delete(trade);</span>
+<span class="pc" id="L85">        Trade trade = tradeRepository.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid trade Id:&quot; + id));</span>
+<span class="fc" id="L86">        tradeRepository.delete(trade);</span>
 
-<span class="nc" id="L88">        return &quot;redirect:/trade/list&quot;;</span>
+<span class="fc" id="L88">        return &quot;redirect:/trade/list&quot;;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

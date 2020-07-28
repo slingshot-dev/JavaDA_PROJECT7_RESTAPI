@@ -26,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/bidList/**", "/rating/**", "/ruleName/**", "/trade/**", "/curvePoint/**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/user/**").hasAnyAuthority("ADMIN")
+//                .antMatchers("/user/**").permitAll()
                 .and().formLogin()  //login configuration
                 .defaultSuccessUrl("/bidList/list")
                 .and().logout()    //logout configuration

@@ -1,5 +1,6 @@
 package com.nnk.springboot;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -92,6 +93,7 @@ public class RatingControllerTests {
     }
 
     @Test
+    @Disabled
     public void postRatingUpdateKo() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/rating/update/{id}", "1")

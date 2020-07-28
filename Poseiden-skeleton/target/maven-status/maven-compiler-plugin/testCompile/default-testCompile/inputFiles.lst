@@ -1,10 +1,14 @@
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/CurvePointTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/BidTests.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/TradeControllerTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/RatingTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/TradeTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/RuleTests.java
-/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/LoginControllerTest.java
-/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/ControllerErrorTests.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/UserControllerTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/BidListControllerTest.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/CurvePointControllerTests.java
 /home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/PasswordEncodeTest.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/RatingControllerTests.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/RulecontrollerTests.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/LoginControllerTest.java
+/home/slingshot/IdeaProjects/Projet7_OC/Poseiden-skeleton/src/test/java/com/nnk/springboot/ControllerErrorTests.java
