@@ -25,16 +25,16 @@ public class Trade {
 
     @NotNull
     @Column(name = "buy_quantity")
-    private double buyQuantity;
+    private Double buyQuantity;
 
     @Column(name = "sell_quantity")
-    private double sellQuantity;
+    private Double sellQuantity;
 
     @Column(name = "buy_price")
-    private double buyPrice;
+    private Double buyPrice;
 
     @Column(name = "sell_price")
-    private double sellPrice;
+    private Double sellPrice;
 
     @Column(name = "benchmark")
     private String benchmark;
@@ -111,11 +111,11 @@ public class Trade {
         this.type = type;
     }
 
-    public double getBuyQuantity() {
+    public Double getBuyQuantity() {
         return buyQuantity;
     }
 
-   public void setBuyQuantity(double buyQuantity) {
+   public void setBuyQuantity(Double buyQuantity) {
         this.buyQuantity = buyQuantity;
     }
 

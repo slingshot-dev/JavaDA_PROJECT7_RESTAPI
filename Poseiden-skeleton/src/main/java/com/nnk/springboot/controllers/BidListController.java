@@ -70,7 +70,7 @@ public class BidListController {
         }
         bidList.setBidListId(id);
         bidListRepository.save(bidList);
-        model.addAttribute("bidLists", bidListRepository.findAll());
+        model.addAttribute("bidList", bidListRepository.findAll());
         return "redirect:/bidList/list";
     }
 

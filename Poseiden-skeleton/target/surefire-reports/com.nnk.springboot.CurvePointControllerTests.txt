@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.CurvePointControllerTests
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 1, Skipped: 1, Time elapsed: 4.853 s <<< FAILURE! - in com.nnk.springboot.CurvePointControllerTests
-postCurvePointUpdateKo  Time elapsed: 0.054 s  <<< ERROR!
-org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "curve.id" (template: "curvePoint/update" - line 16, col 20)
-	at com.nnk.springboot.CurvePointControllerTests.postCurvePointUpdateKo(CurvePointControllerTests.java:95)
-Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "curve.id" (template: "curvePoint/update" - line 16, col 20)
-	at com.nnk.springboot.CurvePointControllerTests.postCurvePointUpdateKo(CurvePointControllerTests.java:95)
-Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'id' cannot be found on null
-	at com.nnk.springboot.CurvePointControllerTests.postCurvePointUpdateKo(CurvePointControllerTests.java:95)
-
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.246 s - in com.nnk.springboot.CurvePointControllerTests

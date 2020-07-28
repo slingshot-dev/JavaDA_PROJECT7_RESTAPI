@@ -26,7 +26,6 @@ public class CurvePointControllerTests {
     MockMvc mockMvc;
 
     @Test
-    @Disabled
     public void getCurvePointlist() throws Exception {
         // Arange & Act
         this.mockMvc.perform(get("/curvePoint/list"))
@@ -36,7 +35,6 @@ public class CurvePointControllerTests {
     }
 
     @Test
-    @Disabled
     public void getCurvePointAdd() throws Exception {
         // Arange & Act
         this.mockMvc.perform(get("/curvePoint/add"))
@@ -47,7 +45,6 @@ public class CurvePointControllerTests {
 
 
     @Test
-    @Disabled
     public void getCurvePointValidateOk() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/curvePoint/validate")
@@ -59,7 +56,6 @@ public class CurvePointControllerTests {
                 .andDo(MockMvcResultHandlers.print());
     }
     @Test
-    @Disabled
     public void getCurvePointValidateKo() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/curvePoint/validate")
@@ -73,7 +69,6 @@ public class CurvePointControllerTests {
     }
 
     @Test
-    @Disabled
     public void getCurvePointUpdate() throws Exception {
         // Arange & Act
         this.mockMvc.perform(get("/curvePoint/update/{id}", "1"))
@@ -83,7 +78,6 @@ public class CurvePointControllerTests {
     }
 
     @Test
-    @Disabled
     public void postCurvePointUpdate() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/curvePoint/update/{id}", "1")
@@ -109,7 +103,6 @@ public class CurvePointControllerTests {
     }
 
     @Test
-    @Disabled
     public void CurvePointDelete() throws Exception {
         // Arange & Act
         this.mockMvc.perform(get("/curvePoint/delete/{id}", "2"))

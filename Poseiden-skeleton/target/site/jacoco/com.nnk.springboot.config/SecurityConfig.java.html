@@ -25,7 +25,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     protected void configure(HttpSecurity http) throws Exception {
 <span class="fc" id="L26">        http.authorizeRequests()</span>
 <span class="fc" id="L27">                .antMatchers(&quot;/bidList/**&quot;, &quot;/rating/**&quot;, &quot;/ruleName/**&quot;, &quot;/trade/**&quot;, &quot;/curvePoint/**&quot;).hasAnyAuthority(&quot;ADMIN&quot;, &quot;USER&quot;)</span>
-<span class="fc" id="L28">                .antMatchers(&quot;/user/**&quot;).permitAll()</span>
+<span class="fc" id="L28">                .antMatchers(&quot;/user/**&quot;).hasAnyAuthority(&quot;ADMIN&quot;)</span>
 <span class="fc" id="L29">                .and().formLogin()  //login configuration</span>
 <span class="fc" id="L30">                .defaultSuccessUrl(&quot;/bidList/list&quot;)</span>
 <span class="fc" id="L31">                .and().logout()    //logout configuration</span>

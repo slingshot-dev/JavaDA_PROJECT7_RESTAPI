@@ -55,7 +55,7 @@ public class CurveController {
         // TODO: get CurvePoint by Id and to model then show to the form
 
         CurvePoint curvePoint = curvePointRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid curve point Id:" + id));
-        model.addAttribute("curve", curvePoint);
+        model.addAttribute("curvePoint", curvePoint);
         return "curvePoint/update";
     }
 

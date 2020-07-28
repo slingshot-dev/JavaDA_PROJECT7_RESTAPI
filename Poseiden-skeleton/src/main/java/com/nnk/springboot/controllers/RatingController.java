@@ -70,7 +70,7 @@ public class RatingController {
         }
         rating.setId(id);
         ratingRepository.save(rating);
-        model.addAttribute("ratings", ratingRepository.findAll());
+        model.addAttribute("rating", ratingRepository.findAll());
 
         return "redirect:/rating/list";
     }
