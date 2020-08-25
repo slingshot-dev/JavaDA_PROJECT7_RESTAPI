@@ -2,17 +2,14 @@ package com.nnk.springboot.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "rule")
 public class RuleName {
-    // TODO: Map columns in data table RULENAME with corresponding java fields
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "ruleid")
     private Integer id;
 
     @NotBlank

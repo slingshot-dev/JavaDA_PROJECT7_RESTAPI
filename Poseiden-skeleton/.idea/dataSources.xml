@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="PoseidonTest2@localhost" uuid="237d3893-c677-462d-a76f-d49e33e389f8">
+    <data-source source="LOCAL" name="poseidon_prod@localhost" uuid="53d2c8d7-0add-472b-9a01-f85fcc224815">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/PoseidonTest2</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/poseidon_prod</jdbc-url>
       <driver-properties>
         <property name="serverTimezone" value="Europe/Paris" />
       </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="testdb" uuid="18009dbe-023c-4fdc-8c46-3a8de3abe63b">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:testdb</jdbc-url>
     </data-source>
   </component>
 </project>

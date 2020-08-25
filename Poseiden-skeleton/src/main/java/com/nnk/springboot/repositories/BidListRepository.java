@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BidListRepository extends JpaRepository<BidList, Integer> {
-//    @Query(value = "select b from BidList b where b.BidListId=:id")
+
     BidList findByBidListId(Integer id);
 
 }

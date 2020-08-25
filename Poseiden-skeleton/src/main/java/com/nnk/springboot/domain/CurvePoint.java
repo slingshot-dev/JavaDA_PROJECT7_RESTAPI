@@ -1,9 +1,7 @@
 package com.nnk.springboot.domain;
 
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
@@ -11,7 +9,6 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "curve_point")
 public class CurvePoint {
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -61,14 +58,6 @@ public class CurvePoint {
         this.curveId = curveId;
     }
 
-/*    public Timestamp getAsOfDate() {
-        return asOfDate;
-    }
-
-    public void setAsOfDate(Timestamp asOfDate) {
-        this.asOfDate = asOfDate;
-    }*/
-
     public Double getTerm() {
         return term;
     }
@@ -85,11 +74,4 @@ public class CurvePoint {
         this.value = value;
     }
 
-/*    public Timestamp getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
-    }*/
 }

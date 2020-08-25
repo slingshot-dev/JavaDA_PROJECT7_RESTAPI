@@ -1,4 +1,21 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.BidListControllerTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.201 s - in com.nnk.springboot.BidListControllerTest
+Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.12 s <<< FAILURE! - in com.nnk.springboot.BidListControllerTest
+postBidListUpdate  Time elapsed: 0.026 s  <<< ERROR!
+org.springframework.web.util.NestedServletException: 
+Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PRIMARY KEY ON PUBLIC.BID_LIST(BIDLISTID) [10, 'Tests1', NULL, NULL, NULL, NULL, NULL, 10.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DescTests1']"; SQL statement:
+insert into bid_list (account, ask, ask_quantity, benchmark, bid, bid_list_date, bid_quantity, book, commentary, creation_date, creation_name, deal_name, deal_type, revision_date, revision_name, security, side, source_list_id, status, trader, type, bidlistid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.nnk.springboot.BidListControllerTest.postBidListUpdate(BidListControllerTest.java:85)
+Caused by: org.springframework.dao.DataIntegrityViolationException: 
+could not execute statement; SQL [n/a]; constraint ["PRIMARY KEY ON PUBLIC.BID_LIST(BIDLISTID) [10, 'Tests1', NULL, NULL, NULL, NULL, NULL, 10.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DescTests1']"; SQL statement:
+insert into bid_list (account, ask, ask_quantity, benchmark, bid, bid_list_date, bid_quantity, book, commentary, creation_date, creation_name, deal_name, deal_type, revision_date, revision_name, security, side, source_list_id, status, trader, type, bidlistid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.nnk.springboot.BidListControllerTest.postBidListUpdate(BidListControllerTest.java:85)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at com.nnk.springboot.BidListControllerTest.postBidListUpdate(BidListControllerTest.java:85)
+Caused by: org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: 
+Violation d'index unique ou clé primaire: "PRIMARY KEY ON PUBLIC.BID_LIST(BIDLISTID) [10, 'Tests1', NULL, NULL, NULL, NULL, NULL, 10.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DescTests1']"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.BID_LIST(BIDLISTID) [10, 'Tests1', NULL, NULL, NULL, NULL, NULL, 10.0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'DescTests1']"; SQL statement:
+insert into bid_list (account, ask, ask_quantity, benchmark, bid, bid_list_date, bid_quantity, book, commentary, creation_date, creation_name, deal_name, deal_type, revision_date, revision_name, security, side, source_list_id, status, trader, type, bidlistid) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+	at com.nnk.springboot.BidListControllerTest.postBidListUpdate(BidListControllerTest.java:85)
+

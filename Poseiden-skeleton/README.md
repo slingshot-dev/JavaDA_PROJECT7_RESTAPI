@@ -1,3 +1,10 @@
+## Projet Poseidon
+
+Projet 7 : Poseidon : Logiciel d’entreprise déployé sur le Web qui vise à générer davantage de transactions pour les investisseurs institutionnels qui achètent et vendent des titres à revenu fixe.
+
+
+A Spring Boot App to expose API Rest. All the URL, expose informations or performs modidication from/in the BDD (MySQL)
+
 # spring-boot
 ## Technical:
 
@@ -14,18 +21,22 @@
     - Source root: src/main/java
     - View: src/main/resources
     - Static: src/main/resource/static
-4. Create database with name "demo" as configuration in application.properties
-5. Run sql script to create table doc/data.sql
+4. Create database with name "poseidon_prod" as configuration in application.properties
 
-## Implement a Feature
-1. Create mapping domain class and place in package com.nnk.springboot.domain
-2. Create repository class and place in package com.nnk.springboot.repositories
-3. Create controller class and place in package com.nnk.springboot.controllers
-4. Create view files and place in src/main/resource/templates
+## Running App
+java -jar Poseidon.jar
 
-## Write Unit Test
-1. Create unit test and place in package com.nnk.springboot in folder test > java
+## Testing
+To run the tests from maven, go to the folder that contains the pom.xml file and execute the below command.
 
-## Security
-1. Create user service to load user from  database and place in package com.nnk.springboot.services
-2. Add configuration class and place in package com.nnk.springboot.config
+mvn test
+
+# Reporting
+To generate Surefire Report
+
+mvn surefire-report:report
+
+To generate Reports (ex Jacoco)
+
+mvn site
+

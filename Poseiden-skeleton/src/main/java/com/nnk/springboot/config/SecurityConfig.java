@@ -41,6 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(myAppUserDetailsService).passwordEncoder(passwordEncoder);
     }
 
+    // Classe de validation du format du Mot de Passe
+
     public static boolean testPassword(String pass) {
         String strRegEx = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,15}$";
 

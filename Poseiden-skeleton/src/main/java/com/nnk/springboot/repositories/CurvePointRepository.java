@@ -8,7 +8,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CurvePointRepository extends JpaRepository<CurvePoint, Integer> {
-/*    @Query(value = "select b from CurvePoint b where b.id=:id")
-    CurvePoint findById(Integer id);*/
 
 }

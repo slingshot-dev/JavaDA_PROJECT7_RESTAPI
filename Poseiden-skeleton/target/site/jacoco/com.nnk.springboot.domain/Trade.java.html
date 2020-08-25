@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = &quot;trade&quot;)
 public class Trade {
-    // TODO: Map columns in data table TRADE with corresponding java fields
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -79,181 +78,46 @@ public class Trade {
     private String side;
 
 
-<span class="fc" id="L82">    public Trade() {</span>
-<span class="fc" id="L83">    }</span>
+<span class="fc" id="L81">    public Trade() {</span>
+<span class="fc" id="L82">    }</span>
 
-<span class="fc" id="L85">    public Trade(@NotBlank String account, @NotBlank String type, @NotNull Double buyQuantity) {</span>
-<span class="fc" id="L86">        this.account = account;</span>
-<span class="fc" id="L87">        this.type = type;</span>
-<span class="fc" id="L88">        this.buyQuantity = buyQuantity;</span>
-<span class="fc" id="L89">    }</span>
+<span class="fc" id="L84">    public Trade(@NotBlank String account, @NotBlank String type, @NotNull Double buyQuantity) {</span>
+<span class="fc" id="L85">        this.account = account;</span>
+<span class="fc" id="L86">        this.type = type;</span>
+<span class="fc" id="L87">        this.buyQuantity = buyQuantity;</span>
+<span class="fc" id="L88">    }</span>
 
     public Integer getTradeId() {
-<span class="fc" id="L92">        return tradeId;</span>
+<span class="fc" id="L91">        return tradeId;</span>
     }
 
     public void setTradeId(Integer tradeId) {
-<span class="fc" id="L96">        this.tradeId = tradeId;</span>
-<span class="fc" id="L97">    }</span>
+<span class="fc" id="L95">        this.tradeId = tradeId;</span>
+<span class="fc" id="L96">    }</span>
 
     public String getAccount() {
-<span class="fc" id="L100">        return account;</span>
+<span class="fc" id="L99">        return account;</span>
     }
 
     public void setAccount(String account) {
-<span class="fc" id="L104">        this.account = account;</span>
-<span class="fc" id="L105">    }</span>
+<span class="fc" id="L103">        this.account = account;</span>
+<span class="fc" id="L104">    }</span>
 
     public String getType() {
-<span class="fc" id="L108">        return type;</span>
+<span class="fc" id="L107">        return type;</span>
     }
 
     public void setType(String type) {
-<span class="fc" id="L112">        this.type = type;</span>
-<span class="fc" id="L113">    }</span>
+<span class="fc" id="L111">        this.type = type;</span>
+<span class="fc" id="L112">    }</span>
 
     public Double getBuyQuantity() {
-<span class="fc" id="L116">        return buyQuantity;</span>
+<span class="fc" id="L115">        return buyQuantity;</span>
     }
 
    public void setBuyQuantity(Double buyQuantity) {
-<span class="fc" id="L120">        this.buyQuantity = buyQuantity;</span>
-<span class="fc" id="L121">    }</span>
+<span class="fc" id="L119">        this.buyQuantity = buyQuantity;</span>
+<span class="fc" id="L120">    }</span>
 
-/*     public double getSellQuantity() {
-        return sellQuantity;
-    }
-
-    public void setSellQuantity(double sellQuantity) {
-        this.sellQuantity = sellQuantity;
-    }
-
-    public double getBuyPrice() {
-        return buyPrice;
-    }
-
-    public void setBuyPrice(double buyPrice) {
-        this.buyPrice = buyPrice;
-    }
-
-    public double getSellPrice() {
-        return sellPrice;
-    }
-
-    public void setSellPrice(double sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-
-    public String getBenchmark() {
-        return benchmark;
-    }
-
-    public void setBenchmark(String benchmark) {
-        this.benchmark = benchmark;
-    }
-
-    public Timestamp getTradeDate() {
-        return tradeDate;
-    }
-
-    public void setTradeDate(Timestamp tradeDate) {
-        this.tradeDate = tradeDate;
-    }
-
-    public String getSecurity() {
-        return security;
-    }
-
-    public void setSecurity(String security) {
-        this.security = security;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getTrader() {
-        return trader;
-    }
-
-    public void setTrader(String trader) {
-        this.trader = trader;
-    }
-
-    public String getBook() {
-        return book;
-    }
-
-    public void setBook(String book) {
-        this.book = book;
-    }
-
-    public String getCreationName() {
-        return creationName;
-    }
-
-    public void setCreationName(String creationName) {
-        this.creationName = creationName;
-    }
-
-    public Timestamp getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public String getRevisionName() {
-        return revisionName;
-    }
-
-    public void setRevisionName(String revisionName) {
-        this.revisionName = revisionName;
-    }
-
-    public Timestamp getRevisionDate() {
-        return revisionDate;
-    }
-
-    public void setRevisionDate(Timestamp revisionDate) {
-        this.revisionDate = revisionDate;
-    }
-
-    public String getDealName() {
-        return dealName;
-    }
-
-    public void setDealName(String dealName) {
-        this.dealName = dealName;
-    }
-
-    public String getDealType() {
-        return dealType;
-    }
-
-    public void setDealType(String dealType) {
-        this.dealType = dealType;
-    }
-
-    public String getSourceListId() {
-        return sourceListId;
-    }
-
-    public void setSourceListId(String sourceListId) {
-        this.sourceListId = sourceListId;
-    }
-
-    public String getSide() {
-        return side;
-    }
-
-    public void setSide(String side) {
-        this.side = side;
-    }*/
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
