@@ -1,5 +1,6 @@
 package com.nnk.springboot.controllers;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -51,6 +52,7 @@ public class TradeControllerTests {
     public void getTradeValidateKo() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/trade/validate")
+                .param("tradeId", "1")
                 .param("account", "")
                 .param("type", "2")
                 .param("buyQuantity", "3"))
@@ -63,7 +65,7 @@ public class TradeControllerTests {
     @Test
     public void getTradeUpdate() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/trade/update/{id}", "10"))
+        this.mockMvc.perform(get("/trade/update/{id}", "1"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
@@ -72,7 +74,7 @@ public class TradeControllerTests {
     @Test
     public void postTradeUpdate() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(post("/trade/update/{id}", "10")
+        this.mockMvc.perform(post("/trade/update/{id}", "1")
                 .param("account", "11")
                 .param("type", "22")
                 .param("buyQuantity", "33"))
@@ -84,7 +86,7 @@ public class TradeControllerTests {
     @Test
     public void postTradeUpdateKo() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(post("/trade/update/{id}", "10")
+        this.mockMvc.perform(post("/trade/update/{id}", "1")
                 .param("account", "")
                 .param("type", "22")
                 .param("buyQuantity", "33"))
@@ -97,7 +99,7 @@ public class TradeControllerTests {
     @Test
     public void TradeDelete() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/trade/delete/{id}", "20"))
+        this.mockMvc.perform(get("/trade/delete/{id}", "2"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andDo(MockMvcResultHandlers.print());
@@ -106,7 +108,8 @@ public class TradeControllerTests {
     @Test
     public void getTradeValidateOk() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(post("/trade/validate")
+        this.mockMvc.perform(post("/trade/validate/")
+                .param("tradeId", "1")
                 .param("account", "7")
                 .param("type", "8")
                 .param("buyQuantity", "9"))

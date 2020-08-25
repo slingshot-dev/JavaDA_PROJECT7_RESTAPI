@@ -53,6 +53,7 @@ public class UserControllerTests {
     public void getUserValidateOk() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/user/validate")
+                .param("id", "2")
                 .param("fullname", "1")
                 .param("username", "2")
                 .param("password", "Rsv1000R!")
@@ -67,6 +68,7 @@ public class UserControllerTests {
     public void getUserValidateKo() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/user/validate")
+                .param("id", "1")
                 .param("fullname", "")
                 .param("username", "2")
                 .param("password", "$2a$10$ErEE83YRmdtAGvndMDVZje0jah2IDUF9rR5Y1rZkIa6pVB3mBB0XK")

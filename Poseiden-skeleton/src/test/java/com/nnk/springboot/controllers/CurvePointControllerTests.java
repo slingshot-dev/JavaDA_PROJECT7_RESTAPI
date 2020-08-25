@@ -50,6 +50,7 @@ public class CurvePointControllerTests {
     public void getCurvePointValidateOk() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/curvePoint/validate")
+                .param("id", "1")
                 .param("curveId", "1")
                 .param("term", "2")
                 .param("value", "3"))
@@ -73,7 +74,7 @@ public class CurvePointControllerTests {
     @Test
     public void getCurvePointUpdate() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/curvePoint/update/{id}", "10"))
+        this.mockMvc.perform(get("/curvePoint/update/{id}", "1"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
@@ -107,7 +108,7 @@ public class CurvePointControllerTests {
     @Test
     public void CurvePointDelete() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/curvePoint/delete/{id}", "20"))
+        this.mockMvc.perform(get("/curvePoint/delete/{id}", "2"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andDo(MockMvcResultHandlers.print());

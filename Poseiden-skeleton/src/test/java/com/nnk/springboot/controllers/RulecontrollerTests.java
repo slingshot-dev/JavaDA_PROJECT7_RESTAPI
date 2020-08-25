@@ -50,7 +50,7 @@ public class RulecontrollerTests {
     public void getRuleValidateOk() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/ruleName/validate")
-                .param("ruleid", "70")
+                .param("id", "1")
                 .param("name", "1")
                 .param("description", "2")
                 .param("json", "3")
@@ -81,7 +81,7 @@ public class RulecontrollerTests {
     @Test
     public void getRuleUpdate() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/ruleName/update/{id}", "10"))
+        this.mockMvc.perform(get("/ruleName/update/{id}", "1"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
@@ -105,7 +105,7 @@ public class RulecontrollerTests {
     @Test
     public void postRuleUpdateKo() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(post("/ruleName/update/{id}", "10")
+        this.mockMvc.perform(post("/ruleName/update/{id}", "1")
                 .param("name", "")
                 .param("description", "22")
                 .param("json", "33")
@@ -121,7 +121,7 @@ public class RulecontrollerTests {
     @Test
     public void RuleDelete() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/ruleName/delete/{id}", "20"))
+        this.mockMvc.perform(get("/ruleName/delete/{id}", "2"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andDo(MockMvcResultHandlers.print());

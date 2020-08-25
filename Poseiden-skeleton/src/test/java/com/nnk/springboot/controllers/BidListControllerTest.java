@@ -50,6 +50,7 @@ public class BidListControllerTest {
     public void getBidListValidateOk() throws Exception {
         // Arange & Act
         this.mockMvc.perform(post("/bidList/validate")
+                .param("bidListId", "1")
                 .param("account", "NameTests")
                 .param("type", "Desctests")
                 .param("bidQuantity", "10"))
@@ -73,7 +74,7 @@ public class BidListControllerTest {
     @Test
     public void getBidListUpdate() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/bidList/update/{id}", "10"))
+        this.mockMvc.perform(get("/bidList/update/{id}", "1"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andDo(MockMvcResultHandlers.print());
@@ -107,7 +108,7 @@ public class BidListControllerTest {
     @Test
     public void BidListDelete() throws Exception {
         // Arange & Act
-        this.mockMvc.perform(get("/bidList/delete/{id}", "20"))
+        this.mockMvc.perform(get("/bidList/delete/{id}", "2"))
                 // Assert
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andDo(MockMvcResultHandlers.print());
