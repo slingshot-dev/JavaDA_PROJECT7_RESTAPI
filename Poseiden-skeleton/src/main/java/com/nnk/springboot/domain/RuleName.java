@@ -2,36 +2,51 @@ package com.nnk.springboot.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "Rule")
+@Table(name = "rule")
 public class RuleName {
-    // TODO: Map columns in data table RULENAME with corresponding java fields
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @Column(name = "ruleid")
     private Integer id;
 
+    @NotBlank
     @Column(name = "name")
     private String name;
 
+    @NotBlank
     @Column(name = "description")
     private String description;
 
+    @NotBlank
     @Column(name = "json")
     private String json;
 
+    @NotBlank
     @Column(name = "template")
     private String template;
 
-    @Column(name = "sqlStr")
+    @NotBlank
+    @Column(name = "sql_str")
     private String sqlStr;
 
-    @Column(name = "sqlPart")
+    @NotBlank
+    @Column(name = "sql_part")
     private String sqlPart;
 
+    public RuleName() {
+    }
+
+    public RuleName(@NotBlank String name, @NotBlank String description, @NotBlank String json, @NotBlank String template, @NotBlank String sqlStr, @NotBlank String sqlPart) {
+        this.name = name;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sqlStr;
+        this.sqlPart = sqlPart;
+    }
 
     public Integer getId() {
         return id;

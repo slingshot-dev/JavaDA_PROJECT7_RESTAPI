@@ -4,6 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * Controller permettant de visualiser la page d'acceuil du Site Web
+ *
+ */
+
 @Controller
 public class HomeController
 {
